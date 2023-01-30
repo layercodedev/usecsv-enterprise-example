@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>USECSV</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <h1>UseCSV Enterprise Example</h1>
+    <button type="button" id="usecsv-importer-button">
+      Import Data
+    </button>
+    <div id="usecsv-importer-root"></div>
+  </div>
+  <script>
+    window.usecsv = {
+      importerKey: "e3033735-73be-498a-9d3c-0a8b4c070e67",
+      user: { userId: 123 },
+      metadata: { anotherId: 12345 },
+      batchSize: 100,
+      importerDisplay: "modal",
+      onData: (data) => console.log({ data }),
+      onClose: () => console.log("importer is closed")
+    };
+  </script>
+  <script src="src/usecsv.js"></script>
+
+</body>
+
+</html>
