@@ -10,24 +10,23 @@
 <body>
   <div class="app">
     <h1>UseCSV Enterprise Example</h1>
-    <button type="button" id="usecsv-importer-button">
-      Import Data
-    </button>
+    <button type="button" onclick="openImporter()">Import Data</button>
     <div id="usecsv-importer-root"></div>
   </div>
+  <script src="./src/usecsv.js"></script>
   <script>
-    window.usecsv = {
-      importerKey: "e3033735-73be-498a-9d3c-0a8b4c070e67",
-      user: { userId: 123 },
-      metadata: { anotherId: 12345 },
-      batchSize: 100,
-      importerDisplay: "modal",
-      onData: (data) => console.log({ data }),
-      onClose: () => console.log("importer is closed")
-    };
+    function openImporter() {
+      window.usecsv({
+        importerKey: "e3033735-73be-498a-9d3c-0a8b4c070e67",
+        user: { userId: 123 },
+        metadata: { anotherId: 12345 },
+        batchSize: 100,
+        importerDisplay: "modal",
+        onData: (data) => console.log({ data }),
+        onClose: () => console.log("importer is closed")
+      })
+    }
   </script>
-  <script src="src/usecsv.js"></script>
-
 </body>
 
 </html>
